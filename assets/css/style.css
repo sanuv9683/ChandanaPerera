@@ -59,7 +59,7 @@ a,a:hover,a:active,a:focus {
 }
 h1,h2,h3,h4,h5,h6 { 
 	margin: 0;
-	color:#43485c;
+	color:#1a1b1f;
     font-size: 16px;
 	font-family: 'Poppins', sans-serif;
 	text-transform: capitalize;
@@ -203,7 +203,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--theme-color);}
     content: " ";
     top:0;
     left:0;
-    background:rgba(31,44,108,.65);
+    background: rgb(23 25 36 / 65%);
     width:100%;
     height:100%;
 }
@@ -224,6 +224,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--theme-color);}
     text-transform: uppercase;
     margin: 30px 0 60px;
     letter-spacing: 1px;
+    font-weight: 500;
 }
 .header-text a {
     width: 200px;
