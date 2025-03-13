@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <!-- Linear gradient from a fresh green to a softer green -->
+        <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4caf50; stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#81c784; stop-opacity:1" />
+        </linearGradient>
+        <!-- Inner shadow filter for subtle depth -->
+        <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feComponentTransfer in="SourceAlpha">
+                <feFuncA type="table" tableValues="1 0" />
+            </feComponentTransfer>
+            <feGaussianBlur stdDeviation="2"/>
+            <feOffset dx="0" dy="0"/>
+            <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
+        </filter>
+    </defs>
+
+    <!-- Outer circle with linear gradient and white stroke -->
+    <circle cx="50" cy="50" r="48" fill="url(#lg1)" stroke="#ffffff" stroke-width="2" />
+
+    <!-- Optional inner circle to accentuate the inner shadow -->
+    <circle cx="50" cy="50" r="40" fill="none" filter="url(#innerShadow)" />
+
+    <!-- "CP" monogram text -->
+    <text x="50" y="62" font-family="'Roboto Slab', serif" font-size="42" fill="#ffffff" text-anchor="middle" font-weight="bold">
+        CP
+    </text>
+</svg>

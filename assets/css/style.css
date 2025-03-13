@@ -906,6 +906,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 #a .card ul li {
     margin: 1.2rem 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 #a .card ul li i {
