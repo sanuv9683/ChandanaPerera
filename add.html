@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Flyer</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --orange: #FF6B35;
+            --dark: #333333;
+            --green: #25D366;
+            --background: #f9f4ef;
+            --white: #ffffff;
+            /* SVG Data URIs for section patterns */
+            --pattern-math: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' fill='none'/%3E%3Cpath d='M1 5h8M5 1v8' stroke='%23FF6B35' stroke-width='0.5'/%3E%3Ccircle cx='5' cy='5' r='1.5' stroke='%23333333' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            --pattern-edu: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='5,1 9,3 5,5 1,3' fill='%23FF6B35'/%3E%3Cline x1='5' y1='5' x2='5' y2='9' stroke='%23333333' stroke-width='0.5'/%3E%3Ccircle cx='5' cy='9' r='1' fill='%23333333'/%3E%3C/svg%3E");
+            --pattern-astro: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='3' fill='%23FF6B35'/%3E%3Ccircle cx='5' cy='5' r='2.2' fill='none' stroke='%23333333' stroke-width='0.5'/%3E%3Ccircle cx='5' cy='5' r='1.4' fill='none' stroke='%23FFFFFF' stroke-width='0.3'/%3E%3C/svg%3E");
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Abstract organic background */
+            background-color: var(--background);
+            background-image:
+                    radial-gradient(circle at 15% 25%, rgba(255,107,53,0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 85% 20%, rgba(37,211,102,0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 25% 80%, rgba(52,152,219,0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(255,226,128,0.15) 0%, transparent 50%),
+                    linear-gradient(135deg, rgba(255,107,53,0.1) 20%, rgba(37,211,102,0.1) 50%, rgba(255,226,128,0.1) 80%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 20px;
+            color: var(--dark);
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .section {
+            position: relative;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .math { background: var(--white) var(--pattern-math) top right / 150px no-repeat; }
+        .edu  { background: var(--white) var(--pattern-edu) bottom left / 120px no-repeat; }
+        .astro{ background: var(--white) var(--pattern-astro) bottom right / 140px no-repeat; }
+        .section-header {
+            display: flex; align-items: center; gap: 12px;
+            background: var(--orange);
+            color: var(--white);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+        .section-header i { font-size: 1.5rem; }
+        .list { list-style: none; margin-bottom: 16px; }
+        .list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+        .list li i.check { color: var(--green); }
+        .list li i.clock { color: var(--orange); }
+        .subheader { font-weight: 600; margin-bottom: 8px; }
+        .schedule {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .schedule div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        .price-tag {
+            display: inline-block;
+            background: #FFE280;
+            color: var(--dark);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+        .cta {
+            display: block;
+            text-align: center;
+            background: var(--green);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px 0;
+            border-radius: 8px;
+            margin-top: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 600px) {
+            .schedule { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Math Teaching Services -->
+    <div class="section math">
+        <div class="section-header">
+            <i class="fas fa-calculator"></i><span>Math Teaching Services</span>
+        </div>
+        <div class="subheader">Group Classes</div>
+        <ul class="list">
+            <li><i class="fas fa-check check"></i>Grade 3</li>
+            <li><i class="fas fa-check check"></i>Grade 4</li>
+            <li><i class="fas fa-check check"></i>Grade 5</li>
+            <li><i class="fas fa-check check"></i>SAT Exam</li>
+            <li><i class="fas fa-check check"></i>11 Plus Exam</li>
+        </ul>
+        <div class="subheader">Schedule (Saturdays):</div>
+        <div class="schedule">
+            <div><i class="fas fa-clock clock"></i>Grade 5: 08:00–09:30</div>
+            <div class="price-tag">£10/hr</div>
+            <div><i class="fas fa-clock clock"></i>Grade 4: 09:30–11:00</div>
+            <div><i class="fas fa-clock clock"></i>Grade 3: 11:00–12:30</div>
+            <div><i class="fas fa-clock clock"></i>SAT Exam: 13:00–14:30</div>
+            <div><i class="fas fa-clock clock"></i>11 Plus: 15:00–16:30</div>
+        </div>
+        <p><strong>Mode:</strong> Online via Teams / Google Meet / Zoom</p>
+        <a href="#" class="cta"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
+    </div>
+    <!-- Additional Educational Services -->
+    <div class="section edu">
+        <div class="section-header">
+            <i class="fas fa-graduation-cap"></i><span>Additional Educational Services</span>
+        </div>
+        <p>Extra support for schools, universities & institutes:</p>
+        <ul class="list">
+            <li><i class="fas fa-check check"></i>Exam invigilation</li>
+            <li><i class="fas fa-check check"></i>Assignment reading</li>
+            <li><i class="fas fa-check check"></i>Answer-script marking</li>
+            <li><i class="fas fa-check check"></i>Question-paper setting</li>
+            <li><i class="fas fa-check check"></i>Case-study prep & marking</li>
+        </ul>
+        <p><em>Fees negotiable based on institute policy.</em></p>
+        <a href="#" class="cta"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
+    </div>
+    <!-- Astrology Services -->
+    <div class="section astro">
+        <div class="section-header">
+            <i class="fas fa-crystal-ball"></i><span>Astrology Services</span>
+        </div>
+        <ul class="list">
+            <li><i class="fas fa-chart-line"></i>Birth Chart (Handahan) Prep: <span class="price-tag">£30</span></li>
+            <li><i class="fas fa-chart-pie"></i>Birth Chart + Full Life Report: <span class="price-tag">£50</span></li>
+            <li><i class="fas fa-star"></i>Nakath Services (incl. malware nakath): <span class="price-tag">£25</span></li>
+        </ul>
+        <a href="#" class="cta"><i class="fab fa-whatsapp"></i> Contact via WhatsApp</a>
+    </div>
+</div>
+</body>
+</html>
